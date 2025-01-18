@@ -10,7 +10,9 @@ export default defineConfig({
             // eslint-disable-next-line no-undef
             '@': path.resolve(__dirname, 'src'),
             // eslint-disable-next-line no-undef
-            '@components': path.resolve(__dirname, 'src/components')
+            '@components': path.resolve(__dirname, 'src/components'),
+            // eslint-disable-next-line no-undef
+            '@styles': path.resolve(__dirname, 'src/assets/styles')
         }
     }
 });
