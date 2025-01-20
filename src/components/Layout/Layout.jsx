@@ -1,8 +1,12 @@
+import styles from './styles.module.scss';
+
 // eslint-disable-next-line react/prop-types
 function MainLayout({ children }) {
+    const { wrapLayout, container } = styles;
+
     return (
-        <main>
-            <div>{children} </div>
+        <main className={wrapLayout}>
+            <div className={container}>{children} </div>
         </main>
     );
 }
