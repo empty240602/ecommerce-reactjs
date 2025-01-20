@@ -1,10 +1,10 @@
 import './App.css';
-import MyHeader from '@components/Header/Header';
+import HomePage from '@components/HomePage/HomePage';
 
 function App() {
     return (
         <>
-            <MyHeader />
+            <HomePage />
         </>
     );
 }

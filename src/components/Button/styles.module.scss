@@ -1,0 +1,18 @@
+@use '@styles/mixin.module.scss';
+
+.btn {
+    // @include mixin.btn(176px, 42px, #222, 3px);
+    color: #fff;
+    padding: 13px 45px;
+    border-radius: 3px;
+    border: none;
+    background-color: #222;
+    font-weight: 300;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+        transition: opacity 300ms;
+    }
+}
