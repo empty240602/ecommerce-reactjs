@@ -1,0 +1,24 @@
+@use '@styles/mixin.module.scss';
+
+.container {
+    background-image: url('https://i.pinimg.com/736x/82/65/a5/8265a5f4903a8e8e00a74eec2ec36613.jpg');
+    height: 409px;
+    width: calc(100% / 2);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.containerTimer {
+    @include mixin.flex_box_custom(center, center, 10px);
+}
+
+.title {
+    font-size: 28px;
+    color: #222;
+    text-align: center;
+}
+
+.boxBtn {
+    margin-top: 20px;
+    text-align: center;
+}

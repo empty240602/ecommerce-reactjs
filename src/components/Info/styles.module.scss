@@ -21,4 +21,12 @@
     color: #fff;
     font-weight: 300;
     font-size: 16px;
+
+    .content {
+        @include mixin.flex_box_custom(center, center, 0px);
+    }
+
+    .description {
+        @include mixin.flex_box_custom(center, center, 0px);
+    }
 }

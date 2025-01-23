@@ -9,12 +9,11 @@ function Info() {
         <MainLayout>
             <div className={container}>
                 {dataInfo.map((item) => {
-                    console.log(item);
                     return (
                         // eslint-disable-next-line react/jsx-key
                         <InfoCard
                             title={item.title}
-                            description={item.des}
+                            des={item.des}
                             src={item.src}
                         />
                     );
