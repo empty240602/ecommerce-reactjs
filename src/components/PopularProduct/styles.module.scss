@@ -1,0 +1,8 @@
+@use '@styles/mixin.module.scss';
+
+.container {
+    @include mixin.flex_box_custom(space-between, center, 10px);
+
+    margin-top: 10px;
+    flex-wrap: wrap;
+}

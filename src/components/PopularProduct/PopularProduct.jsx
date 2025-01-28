@@ -1,20 +1,14 @@
-// import CountDownTimer from '@components/CountDownTimer/CountDownTimer';
+/* eslint-disable react/prop-types */
 import MainLayout from '@components/Layout/Layout';
-import styles from './styles.module.scss';
-import CountDownBanner from '@components/CountDownBanner/CountDownBanner';
 import ProductItem from '@components/ProductItem/ProductItem';
+import styles from './styles.module.scss';
 
-// eslint-disable-next-line react/prop-types
-function HeadingListProducts({ data }) {
-    const { container, containerItem } = styles;
-
-    console.log(data);
-
+function PopularProduct({ data }) {
+    const { container } = styles;
     return (
-        <MainLayout>
-            <div className={container}>
-                <CountDownBanner />
-                <div className={containerItem}>
+        <>
+            <MainLayout>
+                <div className={container}>
                     {data.map((item) => {
                         return (
                             <ProductItem
@@ -26,10 +20,18 @@ function HeadingListProducts({ data }) {
                             />
                         );
                     })}
+                    <ProductItem />
+                    <ProductItem />
+                    <ProductItem />
+                    <ProductItem />
+                    <ProductItem />
+                    <ProductItem />
+                    <ProductItem />
+                    <ProductItem />
                 </div>
-            </div>
-        </MainLayout>
+            </MainLayout>
+        </>
     );
 }
 
-export default HeadingListProducts;
+export default PopularProduct;
