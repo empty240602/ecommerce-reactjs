@@ -1,28 +1,29 @@
-// import HomePage from '@components/HomePage/HomePage';
-import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router';
-// import Blog from '@components/Blog/Blog';
 import routers from '@/routers/routers';
 import { Suspense } from 'react';
+import { SideBarProvider } from '@/contexts/SideBarProvider';
+import SideBar from '@components/SideBar/SideBar';
 
 function App() {
-    const root = document.getElementById('root');
-    return ReactDOM.createRoot(root).render(
-        <BrowserRouter>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    {routers.map((item, index) => {
-                        return (
-                            <Route
-                                path={item.path}
-                                element={<item.component />}
-                                key={index}
-                            />
-                        );
-                    })}
-                </Routes>
-            </Suspense>
-        </BrowserRouter>
+    return (
+        <SideBarProvider>
+            <BrowserRouter>
+                <SideBar />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Routes>
+                        {routers.map((item, index) => {
+                            return (
+                                <Route
+                                    path={item.path}
+                                    element={<item.component />}
+                                    key={index}
+                                />
+                            );
+                        })}
+                    </Routes>
+                </Suspense>
+            </BrowserRouter>
+        </SideBarProvider>
     );
 }
 
