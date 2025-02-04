@@ -1,19 +1,19 @@
 import styles from './styles.module.scss';
 import Button from '@components/Button/Button';
-import useTranslateXimg from './TranslateXimg';
+import useTranslateXImage from '@/hooks/useTranslateImage';
 
 function SaleHomePage() {
     const { container, title, description, boxBtn, boxImg } = styles;
 
-    const { translateX } = useTranslateXimg;
+    const { translateXPosition } = useTranslateXImage();
 
     return (
         <div className={container}>
             <div
                 className={boxImg}
                 style={{
-                    transform: `translateX(${translateX}px)`,
-                    transition: 'transform 0.6s ease '
+                    transform: `translateX(${translateXPosition}px)`,
+                    transition: 'transform 0.6s ease'
                 }}
             >
                 <img
@@ -36,8 +36,8 @@ function SaleHomePage() {
             <div
                 className={boxImg}
                 style={{
-                    transform: `translateX(-${translateX}px)`,
-                    transition: 'transform 0.6s ease '
+                    transform: `translateX(-${translateXPosition}px)`,
+                    transition: 'transform 0.6s ease'
                 }}
             >
                 <img

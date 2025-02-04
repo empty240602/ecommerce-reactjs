@@ -6,6 +6,9 @@ import Logo from '@icons/img/logo.png';
 import reloadIcon from '@icons/svgs/reloadIcon.svg';
 import heartIcon from '@icons/svgs/heartIcon.svg';
 import cartIcon from '@icons/svgs/cartIcon.svg';
+import useScrollHandling from '@/hooks/useScrollHandling.js';
+import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 
 function MyHeader() {
     const {
@@ -13,11 +16,35 @@ function MyHeader() {
         containerMenu,
         containerHeader,
         containerBox,
-        container
+        container,
+        topHeader,
+        fixedHeader
     } = styles;
 
+    const { scrollPosition } = useScrollHandling();
+    const [fixedPosition, setFixedPosition] = useState(false);
+
+    const headerClass = classNames(container, topHeader, {
+        [fixedHeader]: fixedPosition
+    });
+
+    useEffect(() => {
+        // Cách 1:
+        // if (scrollPosition > 80) {
+        //     setFixedPosition(true);
+        // } else {
+        //     setFixedPosition(false);
+        // }
+
+        // Cách 2:
+        // setFixedPosition(scrollPosition > 80 ? true : false);
+
+        // Cách 3:
+        setFixedPosition(scrollPosition > 80);
+    }, [scrollPosition]);
+
     return (
-        <div className={container}>
+        <div className={headerClass}>
             <div className={containerHeader}>
                 <div className={containerBox}>
                     <div className={containerBoxIcon}>
