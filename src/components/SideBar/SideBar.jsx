@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import { SideBarContext } from '@/contexts/SideBarProvider';
 import classNames from 'classnames';
 import { RiCloseLargeFill } from 'react-icons/ri';
+import Login from '@components/ContentSideBar/Login/Login';
 
 function SideBar() {
     const { container, overlay, sideBar, slideSideBar, boxIcon } = styles;
@@ -29,7 +30,8 @@ function SideBar() {
                         <RiCloseLargeFill onClick={handleToggle} />
                     </div>
                 )}
-                SideBar
+
+                <Login />
             </div>
         </div>
     );
